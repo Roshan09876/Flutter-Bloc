@@ -30,12 +30,12 @@ class _CartState extends State<Cart> {
         bloc: cartBloc,
         listener: (context, state) {},
         listenWhen: (previous, current) => current is CartActionState,
-        buildWhen: (previous, current) => current is! CartActionState,
+        buildWhen: (previous, current) => current is !CartActionState,
         builder: (context, state) {
           switch (state.runtimeType) {
             case CartLoadingState:
               return Scaffold(
-                body: CircularProgressIndicator(),
+                body: Center(child: CircularProgressIndicator()),
               );
 
             case CartSuccessState:
